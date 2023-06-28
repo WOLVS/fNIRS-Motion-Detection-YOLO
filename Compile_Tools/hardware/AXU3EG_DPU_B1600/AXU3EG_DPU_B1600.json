@@ -1,0 +1,5 @@
+{
+    "target"   : "DPUCZDX8G",
+    "dcf"      : "/workspace/AI-Model-Zoo/all_models_1.2/tensorflow/detection/tf_yolov3_voc_416_416_65.63G_1.2/Compile_Tools/hardware/AXU3EG_DPU_B1600/AXU3EG_DPU_B1600.dcf",
+    "cpu_arch" : "arm64"
+}
