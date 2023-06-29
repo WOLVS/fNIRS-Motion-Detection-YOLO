@@ -4,7 +4,7 @@ A prototype of fNIRS-Notion-Detection based on YOLO
 --------------------------------------------------------------------
 Team number: xohw23-138
 Project name: FPGA-Based Prototype: A Neural Network Implementation for Real-Time Motion Artifact Detection in Wearable fNIRS System
-Link to YouTube Video(s): https://www.youtube.com/watch?v=LJ1h6ofFbEI
+Link to YouTube Video(s): https://youtu.be/LLHI3ttyQKA
 Link to project repository: https://github.com/WOLVS/fNIRS-Motion-Detection-YOLO.git
 --------------------------------------------------------------------
 
@@ -31,23 +31,29 @@ This project presents the creation and development of an innovative FPGA-based p
 Description of archive:
 
 Directory structure:
-- /src: Contains all source code files
-- /doc: Contains all documentation
-- /test: Contains all test code and test data
-
-Documents:
-- [Document name]: [Brief description of the document]
+- /Compile_Tools: Contains scripts for quantizing the model, kernel compilation, and cross-compilation
+- /pre_trained_model: Contains the TensorFlow YoloV3 model with anchors and classes configuration
+- /tf_yolov3_motion_deploy: Contains the testing files for on-board execution
 
 Source files:
-- [Source file name]: [Brief description of the source file]
+- /Compile_Tools: Various scripts to prepare the model for deployment
+- /pre_trained_model: The TensorFlow YoloV3 model files
+- /tf_yolov3_motion_deploy/libdpumodeltf_yolov3_motion.so: The compiled DPU kernel dynamic link library
+- /tf_yolov3_motion_deploy/tf_yolov3_voc_pic_V1.py: The testing Python script
 --------------------------------------------------------------------
 
-Instructions to build and test project:
+Instructions to build project (you don't need to build the project for testing):
 
-Step 1: [Description of the first step]
-Step 2: [Description of the second step]
-Step 3: [Description of the third step]
+Step 1: Download and boot "xilinx/vitis-ai:1.2.82" Docker.
+Step 2: Run "conda activate vitis-ai-tensorflow" to enter the TensorFlow environment.
+Step 3: Run "source 1_tf_quantize.sh" and "source 2_vai_compile.sh".
+Step 4: Exit this docker and download & boot "xilinx/vitis-ai:runtime-1.0.0-cpu" docker and run "source 3_lib_compiler_runtime.sh". After these steps, you should get ".so" dll file for DPU.
 
-... [Continue with the steps as needed]
+Instructions to test project:
+
+Step 1: Download and burn the image file to SD card, then boot the AXU3EG board.
+Step 2: Extract and install DNNDK with "install.sh" in the vitis-ai_v1.2_dnndk Archive (on board).
+Step 3: Copy and paste all files in tf_yolov3_motion_deploy to the working folder (on board).
+Step 4: Run 'python3 tf_yolov3_voc_pic_V1.py'. The demo should now be running.
 
 --------------------------------------------------------------------
