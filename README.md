@@ -51,7 +51,7 @@ Step 4: Exit this docker and download & boot "xilinx/vitis-ai:runtime-1.0.0-cpu"
 
 Instructions to test project:
 
-Step 1: Download and burn the image file to SD card, then boot the AXU3EG board.
+Step 1: Download and burn the image file to SD card (https://drive.google.com/file/d/1ej6aDmI9ExDejRdJkBol5ps9nm_U_NV6/view?usp=drive_link), then boot the AXU3EG board.
 Step 2: Extract and install DNNDK with "install.sh" in the vitis-ai_v1.2_dnndk Archive (on board).
 Step 3: Copy and paste all files in tf_yolov3_motion_deploy to the working folder (on board).
 Step 4: Run 'python3 tf_yolov3_voc_pic_V1.py'. The demo should now be running.
