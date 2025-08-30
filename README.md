@@ -14,14 +14,14 @@ Participant(s):
   Participant 1: Yunyi Zhao
   Email: yunyi.zhao.21@ucl.ac.uk
 
-  Participant 2: Yunjia Xia
+  Participant 2: Xinchen Zhou
   Email: Yunjia.xia.18@ucl.ac.uk
   
 Supervisor name: Dr Shufan Yang
 Supervisor e-mail: s.yang@napier.ac.uk
 --------------------------------------------------------------------
 
-Board used: AXU3EG
+Board used: PYNQ-Z2
 Software Version: Vitis-ai 1.2.0
 
 Brief description of project: 
