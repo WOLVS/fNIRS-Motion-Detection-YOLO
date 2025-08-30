@@ -1,31 +1,32 @@
 # fNIRS-Motion-Detection-YOLO
-A prototype of fNIRS-Notion-Detection based on YOLO
+Edge Implementation based on PYNQ-Z2
 
 --------------------------------------------------------------------
-Team number: xohw23-138
-Project name: FPGA-Based Prototype: A Neural Network Implementation for Real-Time Motion Artifact Detection in Wearable fNIRS System
-Link to YouTube Video(s): https://youtu.be/LLHI3ttyQKA
+Team number: AOHW25-604
+Project name: Edge Implementation of Artificial Neural Network for fNIRS applications
+Link to YouTube Video(s): https://youtu.be/5Mxn1vnKkiQ
 Link to project repository: https://github.com/WOLVS/fNIRS-Motion-Detection-YOLO.git
 --------------------------------------------------------------------
 
-University name: University College London
+University name: University of Leeds
 
 Participant(s): 
   Participant 1: Yunyi Zhao
   Email: yunyi.zhao.21@ucl.ac.uk
 
   Participant 2: Xinchen Zhou
-  Email: Yunjia.xia.18@ucl.ac.uk
+  Email: dtqk4464@leeds.ac.uk
   
 Supervisor name: Dr Shufan Yang
 Supervisor e-mail: s.yang@napier.ac.uk
 --------------------------------------------------------------------
 
 Board used: PYNQ-Z2
-Software Version: Vitis-ai 1.2.0
+Software Version: MobaXterm
+                  DNNDK v3.1
 
 Brief description of project: 
-This project presents the creation and development of an innovative FPGA-based prototype for real-time, low-power detection of motion artifacts in a wearable functional near-infrared spectroscopy (fNIRS) system. It outlines the process of developing the design for a standalone FPGA platform employing a neural network for motion artifact detection and elucidates the method of evaluating the removal of these motion artifacts.
+This project builds an edge intelligence prototype on the PYNQ-Z2 and integrates it with YOLOv3 object detection on the board to dynamically adjust detection and interaction strategies. The system uses the official DPU to accelerate YOLOv3 inference, achieving real-time, low-power object detection.
 
 --------------------------------------------------------------------
 Description of archive:
@@ -42,18 +43,11 @@ Source files:
 - /tf_yolov3_motion_deploy/tf_yolov3_voc_pic_V1.py: The testing Python script
 --------------------------------------------------------------------
 
-Instructions to build project (you don't need to build the project for testing):
+Instructions to build project on PYNQ-Z2:
 
-Step 1: Download and boot "xilinx/vitis-ai:1.2.82" Docker.
-Step 2: Run "conda activate vitis-ai-tensorflow" to enter the TensorFlow environment.
-Step 3: Run "source 1_tf_quantize.sh" and "source 2_vai_compile.sh".
-Step 4: Exit this docker and download & boot "xilinx/vitis-ai:runtime-1.0.0-cpu" docker and run "source 3_lib_compiler_runtime.sh". After these steps, you should get ".so" dll file for DPU.
-
-Instructions to test project:
-
-Step 1: Download and burn the image file to SD card (https://drive.google.com/file/d/1ej6aDmI9ExDejRdJkBol5ps9nm_U_NV6/view?usp=drive_link), then boot the AXU3EG board.
-Step 2: Extract and install DNNDK with "install.sh" in the vitis-ai_v1.2_dnndk Archive (on board).
-Step 3: Copy and paste all files in tf_yolov3_motion_deploy to the working folder (on board).
-Step 4: Run 'python3 tf_yolov3_voc_pic_V1.py'. The demo should now be running.
+Step 1: Download and burn the image file to SD card (https://drive.google.com/file/d/1YQ_bBGqo_Cpm5JArbu0bOplzQ293TBn9/view), launch and initialize the PYNQ-Z2 board.
+Step 2: Drag the YOLO_V3 file to the work space in MobaXterm and enter the work file(on board).
+Step 3: Run 'Make' commmand to use the Malefile document to build a yolo_image executable program (on board).
+Step 4: Run 'yolo_image' program and select the specific image. The YOLO detection will be started.
 
 --------------------------------------------------------------------
