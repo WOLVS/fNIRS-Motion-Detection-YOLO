@@ -18,7 +18,7 @@ Participant(s):
   Email: dtqk4464@leeds.ac.uk
   
 Supervisor name: Dr Shufan Yang
-Supervisor e-mail: s.yang@napier.ac.uk
+Supervisor e-mail: s.f.yang@leeds.ac.uk
 --------------------------------------------------------------------
 
 Board used: PYNQ-Z2
