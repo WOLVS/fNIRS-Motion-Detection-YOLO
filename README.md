@@ -18,7 +18,7 @@ Participant(s):
   Email: Yunjia.xia.18@ucl.ac.uk
   
 Supervisor name: Dr Shufan Yang
-Supervisor e-mail: s.yang@napier.ac.uk
+Supervisor e-mail: s.f.yang@leeds.ac.uk
 --------------------------------------------------------------------
 
 Board used: AXU3EG
